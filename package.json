@@ -1,0 +1,11 @@
+{
+  "name": "leetcode-github-sync",
+  "version": "3.0.1",
+  "private": true,
+  "description": "Chrome extension: sync Accepted LeetCode solutions to GitHub.",
+  "scripts": {
+    "test": "node tests/run.js",
+    "check": "for f in $(find src tests -name '*.js'); do node --check $f || exit 1; done && echo syntax-ok"
+  },
+  "license": "MIT"
+}

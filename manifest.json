@@ -1,0 +1,71 @@
+{
+  "manifest_version": 3,
+  "name": "LeetHub \u2014 LeetCode Progress & GitHub Backup",
+  "description": "Your personal LeetCode progress dashboard. Passively watches your own submissions; once LeetCode confirms a problem is solved, the exact accepted code is saved to GitHub. It never submits anything.",
+  "version": "3.0.1",
+  "minimum_chrome_version": "120",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "notifications",
+    "alarms",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://api.github.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.js"
+  },
+  "action": {
+    "default_title": "LeetHub",
+    "default_popup": "src/popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "src/options/options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/*"
+      ],
+      "js": [
+        "src/utils/constants.js",
+        "src/utils/formatter.js",
+        "src/utils/errors.js",
+        "src/utils/logger.js",
+        "src/utils/storage.js",
+        "src/utils/languages.js",
+        "src/leetcode/status.js",
+        "src/leetcode/graphql.js",
+        "src/leetcode/parser.js",
+        "src/leetcode/metadata.js",
+        "src/leetcode/submissions.js",
+        "src/content/observer.js",
+        "src/content/widget.js",
+        "src/content/leetcode.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/icon48.png"
+      ],
+      "matches": [
+        "https://leetcode.com/*"
+      ]
+    }
+  ]
+}

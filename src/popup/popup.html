@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LeetHub</title>
+  <link rel="stylesheet" href="../ui/theme.css" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="top">
+      <img src="../../icons/icon48.png" width="28" height="28" alt="LeetHub" class="logo" />
+      <div class="names"><div class="brand">LeetHub</div><div class="muted sub">Your progress</div></div>
+      <div id="streakChip" class="streak-chip" hidden></div>
+    </header>
+    <div id="alerts"></div>
+    <div id="content" class="stack"></div>
+    <footer class="foot">
+      <div id="ghStatus" class="gh-status"></div>
+      <div class="foot-r">
+        <button id="refreshBtn" class="icon-btn" title="Refresh from LeetCode" aria-label="Refresh"></button>
+        <button id="openDash" class="icon-btn wide" title="Open the full dashboard">Dashboard</button>
+        <button id="openSettings" class="icon-btn" title="Settings" aria-label="Settings"></button>
+      </div>
+    </footer>
+  </div>
+  <script src="../utils/constants.js"></script>
+  <script src="../utils/formatter.js"></script>
+  <script src="../ui/components.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
